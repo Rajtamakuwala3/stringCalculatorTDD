@@ -41,4 +41,11 @@ public class StringCalculatorTest {
     public void testNewLine() {
         assertEquals(7, stringCalculator.add("1,2\n4"));
     }
+
+    @Test
+    @DisplayName("Test for special characters")
+    public void testSpecialChar() {
+        assertEquals(9, stringCalculator.add("3,@3@3"));
+    }
+
 }

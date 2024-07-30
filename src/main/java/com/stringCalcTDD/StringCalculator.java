@@ -6,7 +6,9 @@ public class StringCalculator {
             return 0;
         }
         else {
+            number = number.replaceAll("[^0-9]+", ",");
             number = number.replace("\n",",");
+
             String[] nums = number.split(",");
             int sum = 0;
 
