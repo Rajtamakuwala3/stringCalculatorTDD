@@ -57,6 +57,7 @@ public class StringCalculatorTest {
     public void testNegativeNumber() {
         try{
             stringCalculator.add("-1,3,6\\r");
+            stringCalculator.add("Negative value, -8,0");
         }catch(IllegalArgumentException e){
             assertThat(e.getMessage(),containsString("Negatives not allowed"));
         }
@@ -67,5 +68,7 @@ public class StringCalculatorTest {
     public void testStringWithoutNumber() {
         assertEquals(0, stringCalculator.add("Raj Tamakuwala"));
     }
+
+
 
 }

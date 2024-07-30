@@ -31,7 +31,7 @@ public class StringCalculator {
                 }
             }
             if(!negativeNumbers.isEmpty()){
-                throw new IllegalArgumentException("Negative numbers not allowed.");
+                throw new IllegalArgumentException("Negative numbers not allowed, " + String.join(", " ,negativeNumbers));
             }else {
                 return sum;
             }
