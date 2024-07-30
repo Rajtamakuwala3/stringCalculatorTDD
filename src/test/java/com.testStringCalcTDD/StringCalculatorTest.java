@@ -69,6 +69,11 @@ public class StringCalculatorTest {
         assertEquals(0, stringCalculator.add("Raj Tamakuwala"));
     }
 
+    @Test
+    @DisplayName("Test for number grater then 1000")
+    public void testForlargeNumber() {
+        assertEquals(1003, stringCalculator.add("3 , 1000"));
+    }
 
 
 }

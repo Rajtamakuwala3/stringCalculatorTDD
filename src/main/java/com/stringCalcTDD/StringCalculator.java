@@ -23,10 +23,12 @@ public class StringCalculator {
 
             for(String num : nums) {
                 if(!num.isEmpty()) {
-                    if(Integer.parseInt(num)<0){
+                    int tempNumber = Integer.parseInt(num);
+                    if(tempNumber < 0){
                         negativeNumbers.add(num);
                     }else{
-                        sum += Integer.parseInt(num);
+                        if(!(tempNumber > 1000))
+                            sum += Integer.parseInt(num);
                     }
                 }
             }
