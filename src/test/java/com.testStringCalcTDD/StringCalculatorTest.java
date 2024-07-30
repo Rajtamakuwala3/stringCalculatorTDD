@@ -3,6 +3,10 @@ package com.testStringCalcTDD;
 import com.stringCalcTDD.StringCalculator;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class StringCalculatorTest {
     StringCalculator stringCalculator;
@@ -17,4 +21,10 @@ public class StringCalculatorTest {
         stringCalculator = null;
     }
 
+    @Test
+    public void testAdd() {
+        assertEquals(0, stringCalculator.add(""));
+        assertEquals(1, stringCalculator.add("1"));
+        assertEquals(2, stringCalculator.add("2"));
+    }
 }
