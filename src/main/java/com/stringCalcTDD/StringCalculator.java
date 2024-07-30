@@ -1,5 +1,8 @@
 package com.stringCalcTDD;
 
+import java.util.LinkedList;
+import java.util.List;
+
 public class StringCalculator {
     public int add(String number) {
         if(number.isEmpty()) {
@@ -8,14 +11,26 @@ public class StringCalculator {
         else {
             number = number.replaceAll("[^0-9]+", ",");
             number = number.replace("\n",",");
-
             String[] nums = number.split(",");
+
+            List<String> negativeNumbers = new LinkedList<>();
+
             int sum = 0;
 
             for(String num : nums) {
-                sum += Integer.parseInt(num);
+                if(!num.isEmpty()) {
+                    if(Integer.parseInt(num)<0){
+                        negativeNumbers.add(num);
+                    }else{
+                        sum += Integer.parseInt(num);
+                    }
+                }
             }
-            return sum;
+            if(!negativeNumbers.isEmpty()){
+                throw new IllegalArgumentException("Negative numbers not allowed.");
+            }else {
+                return sum;
+            }
         }
     }
 

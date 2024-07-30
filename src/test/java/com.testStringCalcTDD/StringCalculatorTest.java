@@ -6,6 +6,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+
+
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.containsString;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class StringCalculatorTest {
@@ -46,6 +50,16 @@ public class StringCalculatorTest {
     @DisplayName("Test for special characters")
     public void testSpecialChar() {
         assertEquals(9, stringCalculator.add("3,@3@3"));
+    }
+
+    @Test
+    @DisplayName("Test for negative numbers")
+    public void testNegativeNumber() {
+        try{
+            stringCalculator.add("-1,3,6\\r");
+        }catch(IllegalArgumentException e){
+            assertThat(e.getMessage(),containsString("Negatives not allowed"));
+        }
     }
 
 }
