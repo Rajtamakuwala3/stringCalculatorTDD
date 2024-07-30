@@ -22,6 +22,7 @@ public class StringCalculatorTest {
     }
 
     @Test
+    @DisplayName("Test for empty string and single number")
     public void testAdd() {
         assertEquals(0, stringCalculator.add(""));
         assertEquals(1, stringCalculator.add("1"));
@@ -29,8 +30,15 @@ public class StringCalculatorTest {
     }
 
     @Test
+    @DisplayName("Test for multiple numbers")
     public void testMultipleNumbers() {
         assertEquals(3, stringCalculator.add("1,2"));
         assertEquals(9, stringCalculator.add("2,3,4"));
+    }
+
+    @Test
+    @DisplayName("Test for new line")
+    public void testNewLine() {
+        assertEquals(7, stringCalculator.add("1,2\n4"));
     }
 }
