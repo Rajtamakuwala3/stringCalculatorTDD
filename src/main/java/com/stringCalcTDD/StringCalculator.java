@@ -13,6 +13,10 @@ public class StringCalculator {
             number = number.replace("\n",",");
             String[] nums = number.split(",");
 
+            if(number.replace(",", "").isEmpty()){
+                return 0;
+            }
+
             List<String> negativeNumbers = new LinkedList<>();
 
             int sum = 0;

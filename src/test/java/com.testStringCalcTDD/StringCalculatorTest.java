@@ -62,4 +62,10 @@ public class StringCalculatorTest {
         }
     }
 
+    @Test
+    @DisplayName("Test for string without number")
+    public void testStringWithoutNumber() {
+        assertEquals(0, stringCalculator.add("Raj Tamakuwala"));
+    }
+
 }
